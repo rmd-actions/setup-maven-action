@@ -86,7 +86,7 @@ inputs:
   # maven version
   maven-version:
     description: 'The Maven version to set up'
-    default: '3.9.11'
+    default: '3.9.14'
     required: false
 
   # maven settings.xml
@@ -132,7 +132,7 @@ runs:
 
   steps:
 
-    - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       if: inputs.checkout-enabled == 'true'
       with:
         fetch-depth: '${{ inputs.checkout-fetch-depth }}'
@@ -151,7 +151,7 @@ runs:
         distribution: '${{ inputs.java-distribution }}'
         jdkFile: '${{ inputs.java-jdkFile }}'
 
-    - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+    - uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
       if: inputs.cache-enabled == 'true'
       with:
         path: |
@@ -165,7 +165,7 @@ runs:
       shell: bash
       id: current-maven
 
-    - uses: stCarolas/setup-maven@d6af6abeda15e98926a57b5aa970a96bb37f97d1 # v5
+    - uses: stCarolas/setup-maven@12eb41b233df95d49b0c11fc1b5bc8312e5d4ce0 # v5.1
       if: inputs.maven-version != steps.current-maven.outputs.version
       with:
         maven-version: '${{ inputs.maven-version }}'

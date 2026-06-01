@@ -18,14 +18,14 @@ jobs:
     strategy:
       matrix:
         os: [ 'ubuntu-latest', 'windows-latest', 'macOS-latest' ]
-        java: [ '8', '11', '17', '21' ]
-        maven: [ '3.8.8', '3.9.11' ]
+        java: [ '8', '11', '17', '21', '25' ]
+        maven: [ '3.8.8', '3.9.14' ]
       fail-fast: false
 
     runs-on: ${{ matrix.os }}
 
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - uses: ./
         with:
@@ -41,11 +41,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - uses: ./
 
-      - run: mvn -V validate -Drequire.java=17 -Drequire.maven=3.9.11
+      - run: mvn -V validate -Drequire.java=17 -Drequire.maven=3.9.14
         shell: bash
 
   test-ok:
