@@ -37,14 +37,15 @@ For default values you only need:
 | checkout-token               | token               | ${{ github.token }}      |
 | checkout-ssh-key             | ssh-key             |                          |
 | checkout-persist-credentials | persist-credentials | false                    |
+| checkout-lfs                 | lfs                 | false                    |
 
 ## setup-java
 
 | params            | destination  | default |
 |-------------------|--------------|---------|
-| java-version      | java-version | 17      |
+| java-version      | java-version | 25      |
 | java-distribution | distribution | zulu    |
-| java-jdkFile      | jdkFile      |         |
+| java-jdkFile      | jdk-file     |         |
 
 ## cache
 
@@ -74,7 +75,7 @@ So we can use for action:
 
 | params        | destination   | default |
 |---------------|---------------|---------|
-| maven-version | maven-version | 3.9.14  |
+| maven-version | maven-version | 3.10.0  |
 
 ## maven-settings-action
 
