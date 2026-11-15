@@ -45,7 +45,7 @@ For default values you only need:
 |-------------------|--------------|---------|
 | java-version      | java-version | 25      |
 | java-distribution | distribution | zulu    |
-| java-jdkFile      | jdkFile      |         |
+| java-jdkFile      | jdk-file     |         |
 
 ## cache
 
@@ -75,7 +75,7 @@ So we can use for action:
 
 | params        | destination   | default |
 |---------------|---------------|---------|
-| maven-version | maven-version | 3.9.16  |
+| maven-version | maven-version | 3.10.0  |
 
 ## maven-settings-action
 

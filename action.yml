@@ -90,7 +90,7 @@ inputs:
   # maven version
   maven-version:
     description: 'The Maven version to set up'
-    default: '3.9.16'
+    default: '3.10.0'
     required: false
 
   # maven settings.xml
@@ -149,12 +149,12 @@ runs:
         ssh-key: '${{ inputs.checkout-ssh-key }}'
         lfs: '${{ inputs.checkout-lfs }}'
 
-    - uses: actions/setup-java@dd06d9cba3e5552c54d9f8ea23572deb30010f7c
+    - uses: actions/setup-java@d1374f8ac74474200d16ef8ecee22c7ae7a51880
       with:
         overwrite-settings: false
         java-version: '${{ inputs.java-version }}'
         distribution: '${{ inputs.java-distribution }}'
-        jdkFile: '${{ inputs.java-jdkFile }}'
+        jdk-file: '${{ inputs.java-jdkFile }}'
 
     - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
       if: inputs.cache-enabled == 'true'
@@ -175,7 +175,7 @@ runs:
       with:
         maven-version: '${{ inputs.maven-version }}'
 
-    - uses: s4u/maven-settings-action@894661b3ddae382f1ae8edbeab60987e08cf0788 # v4.0.0
+    - uses: s4u/maven-settings-action@4cfd36368400327fd45dcb28f190ae7b85533deb # v4.1.0
       with:
         servers: '${{ inputs.settings-servers }}'
         mirrors: '${{ inputs.settings-mirrors }}'
